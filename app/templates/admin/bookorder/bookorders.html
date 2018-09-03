@@ -1,0 +1,47 @@
+<!-- app/templates/admin/bookorder/bookorders.html -->
+
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Transaction Log{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <br/>
+        {{ utils.flashed_messages() }}
+        <br/>
+        <h1 style="text-align:center;">Orders</h1>
+        {% if bookorder %}
+          <hr class="intro-divider">
+          <div class="center">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th width="5%"> No. </th>
+                  <th width="10%"> User ID </th>
+                  <th width="30%"> Username </th>
+                  <th width="40%"> Book Name </th>
+                  <th width="5%"> Quantity </th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for bookorder in bookorder %}
+                    <tr>
+                      <td> {{ bookorder.id }}</td>
+                      <td> {{ bookorder.userAccount_id }}</td>
+                      <td> {{ bookorder.userAccount_username }} </td>
+                      <td> {{ bookorder.books_name }} </td>
+                      <td> {{ bookorder.amount }} </td>
+                    </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- app/templates/auth/edit.html -->
+
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Edit Account Info{% endblock %}
+{% block body %}
+<div class="content-section">
+  <br/>
+  {{ utils.flashed_messages() }}
+  <br/>
+  <div class="center">
+    <h1>Edit Account Information</h1>
+    <br/>
+    {{ wtf.quick_form(form) }}
+  </div>
+</div>
+{% endblock %}
