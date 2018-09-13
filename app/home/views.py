@@ -81,4 +81,4 @@ def book_orders():
         flash('You have successfully ordered the book.')
         return redirect(url_for('home.dashboard'))
     return render_template('home/bookorders.html', form=form,
-                           title='Order Books')
+                           title='Borrow Books')
